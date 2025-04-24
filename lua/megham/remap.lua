@@ -1,9 +1,6 @@
 -- Set leader key to space
 vim.g.mapleader = " "
 
--- Open file explorer with <leader>pv (space + pv)
-vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
-
 -- Move selected lines up and down in visual mode while maintaining indentation
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Move selection down
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- Move selection up
