@@ -25,16 +25,6 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use {
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
-		config = function()
-			require('dashboard').setup {
-				-- config
-			}
-		end,
-		requires = {'nvim-tree/nvim-web-devicons'}
-	}
-	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = function()
 			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
@@ -49,10 +39,13 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/nvim-cmp'
-	use 'famiu/bufdelete.nvim'  -- For safer buffer deletion
+	use 'famiu/bufdelete.nvim'
+	use 'akinsho/bufferline.nvim'
 	use {
-		'akinsho/bufferline.nvim',  -- For bufferline UI
-		requires = 'nvim-tree/nvim-web-devicons',
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+			'nvim-tree/nvim-web-devicons',
+		},
 	}
 	if packer_bootstrap then
 		require('packer').sync()
